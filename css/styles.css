@@ -1,0 +1,40 @@
+body{
+	background-color: black;
+	color: white;
+}
+.table-hover > tbody > tr:hover {
+	background-color:#1e1e1e;
+}
+
+a:link {
+	color: white;
+}
+
+a:visited {
+	color: white;
+}
+
+a:hover {
+	color: white;
+}
+
+a:active {
+	color: white;
+}
+
+td>img{
+	border: solid;
+	border-width: 1px;
+	border-color: white;
+	width: 64px;
+	height: 64px;
+}
+
+input{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.loginRow{
+	background-color: #ED1B24;
+}
