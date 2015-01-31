@@ -1,27 +1,12 @@
+/******************************Index.html tags******************/
 body{
 	background-color: black;
 	color: white;
 }
-.table-hover > tbody > tr:hover {
-	background-color:#1e1e1e;
+input{
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
-
-a:link {
-	color: white;
-}
-
-a:visited {
-	color: white;
-}
-
-a:hover {
-	color: white;
-}
-
-a:active {
-	color: white;
-}
-
 td>img{
 	border: solid;
 	border-width: 1px;
@@ -29,12 +14,67 @@ td>img{
 	width: 64px;
 	height: 64px;
 }
-
-input{
-	margin-top: 20px;
-	margin-bottom: 20px;
+/******************Editing some bootstrap CSS styles***************/
+.table-hover > tbody > tr:hover {
+	background-color:#1e1e1e;
 }
-
-.loginRow{
+a:link {
+	color: white;
+}
+a:visited {
+	color: white;
+}
+a:hover {
+	color: white;
+}
+a:active {
+	color: white;
+}
+/********************************Inicio.html tags***********************/
+.accountRow{
 	background-color: #ED1B24;
+	width: 100%;
+}
+span{
+	display: block;
+	margin-bottom: -20px;
+}
+input{
+	width: 100%;
+}
+.accountRowTitle{
+	margin-top: 30px;
+	font-weight: bolder;
+	font-size: 20px;
+}
+.inputText{
+	font-size: 10px;
+}
+/*Change input colors*/
+::-webkit-input-placeholder { 
+	color:#8d8d8d;
+}
+:-moz-placeholder {
+	color: #8d8d8d;
+}
+::-moz-placeholder {
+	color:#8d8d8d;
+}
+:-ms-input-placeholder {
+	color:#8d8d8d;
+}
+input, select, textarea{
+	color: black;
+}
+textarea:focus, input:focus {
+	color: black;
+}
+button{
+	background-color:black;
+	border-radius: 0px;
+	border: none;
+	width: 150px;
+}
+.submitDiv{
+	margin-top: 50px;
 }

@@ -1,59 +1,69 @@
-<!Doctype HTML>
-<!--
-Usa este archivo para tu proyecto. No olvides hacer
-la estructura correta y guardar TODO tu CSS en el archivo styles.css
- -->
-<html ng-app="angularTesting">
-	<head>
-		<title>Frontend angular</title>
-		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css.map">
-		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.css.map">
-		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
-		<link rel="stylesheet" type="text/css" href="css/styles.css">
-	</head>
-	<body>
-		<div class="container">
-			<div class="row">
-				<div ng-controller="jsonData">
-					<div class="row">
-						<div class="col-md-4">
-							<img src="images/cognits-logo.png">
-						</div>
-						<div class="col-md-4">
-							
-						</div>
-						<div class="col-md-4">
-							<input type="text" class="form-control" placeholder="Search something" ng-model="buscar"></input>
-						</div>
-						
-					</div>
-					<div class="row">
-						<table class="table table-hover">
-							<tbody>
-								<tr>
-									<th>Album</th>
-									<th>Nombre<span class="glyphicon glyphicon-chevron-up" style="cursor: pointer" ng-click="ordenarPor('-name')"></span><span class="glyphicon glyphicon-chevron-down" style="cursor: pointer" ng-click="ordenarPor('name')"></span></th>
-									<th>Artist  <span class="glyphicon glyphicon-chevron-up" style="cursor: pointer" ng-click="ordenarPor('-artist.name')"></span><span class="glyphicon glyphicon-chevron-down" style="cursor: pointer" ng-click="ordenarPor('artist.name')"></span></th>
-									<th>Duration  <span class="glyphicon glyphicon-chevron-up" style="cursor: pointer" ng-click="ordenarPor('-duration')"></span><span class="glyphicon glyphicon-chevron-down" style="cursor: pointer" ng-click="ordenarPor('duration')"></span></th>
-								</tr>
-								<tr ng-repeat="dato in track | orderBy:ordenSeleccionado | filter:buscar">
-									<td ng-show="{{dato.image[1]}}"><img ng-src="{{dato.image[1] | soloUrl}}" alt="image not found"></td>
-									<td ng-show="!{{dato.image[1]}}"><img src="images/NoCover.jpg" alt="image not found"></td>
-									<td><a href="{{dato.url}}" target="blank" title="Click me">{{dato.name}}</a></td>
-									<td><a href="{{dato.artist.url}}" target="blank" title="Click me">{{dato.artist.name}}</a></td>
-									<td>{{dato.duration *1000 | date: 'mm:ss'}}</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div><!--jsonData controller-->
-			</div><!--Row-->
-		</div><!--Container-->
-		<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
-		<script type="text/javascript" src="js/script.js"></script>
-	</body>
-</html> 
-
+<div class="container">
+	<div class = "row">
+		<div class ="col-md-2"></div>
+		<div class ="col-md-8">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+			</ol>
+			<div class="carousel-inner" role="listbox">
+				<div class="item active">
+					<img src="sketch/hardwell-01.png" alt="Hardwell">
+				</div>
+				<div class="item">
+					<img src="sketch/shakira-01.png" alt="Shakira">
+				</div>
+				<div class="item">
+					<img src="sketch/u2-01.png" alt="U2">
+				</div>
+			</div>
+			</div>
+		</div><!--carousel col-md-->
+		<div class ="col-md-2"></div>
+	</div><!--first row-->
+	<div class="row accountRow">
+		<div class="col-md-2"></div>
+		<div class="col-md-8 text-center">
+			<table class="table">
+				<thead>
+					<tr>
+						<td class="text-center accountRowTitle">Ingresar</td>
+						<td class="text-center accountRowTitle">Crea tu perfil</td>
+					</tr>
+				</thead>
+				<tbody ng-app="authApp">
+					<tr>
+						<td>
+							<!--Login form-->
+							<form>
+								<span class="inputText">Correo Electronico</span>
+								<span><input type="email" ng-model="user.email" placeholder="Correo Electronico"/></span><br>
+								<span class="inputText">Contraseña</span>
+								<span><input type="password" ng-model="user.password" placeholder="Contraseña"/></span>
+								<p ng-click="forgotPass=true">¿Olvidaste tu contraseña?</p>
+								<p ng-show="forgotPass"><strong>Plop! Pos que mal.</strong></p>
+								<div class="text-center submitDiv"><button ng-click="logIn(user)">Ingresar</button></div>
+								
+							</form>
+						</td>
+						<td>
+							<!--Register form-->
+							<form>
+								<span class="inputText">Nombre</span>
+								<span><input type="text" ng-model="user.username" placeholder="Nombre"/></span><br>
+								<span class="inputText">Correo Electronico</span>
+								<span><input type="email" ng-model="user.email" placeholder="Correo Electronico"/></span><br>
+								<span class="inputText">Contraseña</span>
+								<span><input type="password" ng-model="user.password" placeholder="Password"/></span>
+								<div class="text-center submitDiv"> <button ng-click="signUp(user)">Confirmar</button></div>
+							</form>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!--div class="col-md-2"><a href="#/listsongs/">go to list songs</a></div-->
+	</div><!--Second row--->
+</div><!--container-->
