@@ -26,7 +26,14 @@
 	<div class="row accountRow">
 		<div class="col-md-2"></div>
 		<div class="col-md-8 text-center">
-			<table class="table">
+			<div ng-show="currentUser">
+				<p>
+					<h1>Bienvenido <strong><u>{{currentUser.get('username')}}</u></strong></h1>
+					<button onclick="location.href='#/listsongs'" class="blackButton">Listado de canciones</button>
+					<button ng-click="logOut(user)" class="blackButton">Cerrar sesion</button>
+				</p>
+			</div>
+			<table class="table" ng-hide="currentUser">
 				<thead>
 					<tr>
 						<td class="text-center accountRowTitle">Ingresar</td>
@@ -39,30 +46,30 @@
 							<!--Login form-->
 							<form>
 								<span class="inputText">Nombre</span>
-								<input type="text" ng-model="user.username" placeholder="Nombre" />
+								<input type="text" ng-model="user.username" placeholder="Nombre" class="inicioInput"/>
 								<span class="inputText">Contraseña</span>
-								<span><input type="password" ng-model="user.password" placeholder="Contraseña"/></span>
+								<span><input type="password" ng-model="user.password" placeholder="Contraseña"class="inicioInput"/></span>
 								<p ng-click="forgotPass=true">¿Olvidaste tu contraseña?</p>
 								<p ng-show="forgotPass"><strong>Plop! Pos que mal.</strong></p>
-								<div class="text-center submitDiv"><button ng-click="logIn(user, '/listsongs')">Ingresar</button></div>
+								<div class="text-center submitDiv"><button ng-click="logIn(user, '/listsongs')" class="blackButton">Ingresar</button></div>
 							</form>
 						</td>
 						<td>
 							<!--Register form-->
 							<form>
 								<span class="inputText">Nombre</span>
-								<span><input type="text" ng-model="user.username" placeholder="Nombre"/></span><br>
+								<span><input type="text" ng-model="user.username" placeholder="Nombre" class="inicioInput"/></span><br>
 								<span class="inputText">Correo Electronico</span>
-								<span><input type="email" ng-model="user.email" placeholder="Correo Electronico"/></span><br>
+								<span><input type="email" ng-model="user.email" placeholder="Correo Electronico" class="inicioInput"/></span><br>
 								<span class="inputText">Contraseña</span>
-								<span><input type="password" ng-model="user.password" placeholder="Password"/></span>
-								<div class="text-center submitDiv"> <button ng-click="signUp(user)">Confirmar</button></div>
+								<span><input type="password" ng-model="user.password" placeholder="Password" class="inicioInput"/></span>
+								<div class="text-center submitDiv"> <button ng-click="signUp(user, '/listsongs')" class="blackButton">Confirmar</button></div>
 							</form>
 						</td>
 					</tr>
 				</tbody>
 			</table>
-			<button ng-click="logOut(user)">Log out</button>
+			
 		</div>
 		<!--div class="col-md-2"><a href="#/listsongs/">go to list songs</a></div-->
 	</div><!--Second row--->

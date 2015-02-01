@@ -14,9 +14,9 @@ var angularTesting = angular.module('angularTesting', ["ngRoute"]).config(functi
 		redirectTo: '/'
 	});
 }).run(['$rootScope', "$location", function($scope, $location) {
+	$scope.scenario = 'Sign up';
 	$scope.currentUser = Parse.User.current();
-	
-	$scope.signUp = function(form) {
+	$scope.signUp = function(form, newPath) {
 		var user = new Parse.User();
 		user.set("email", form.email);
 		user.set("username", form.username);
@@ -25,6 +25,7 @@ var angularTesting = angular.module('angularTesting', ["ngRoute"]).config(functi
 		user.signUp(null, {
 			success: function(user) {
 				$scope.currentUser = user;
+				$location.path(newPath);
 				$scope.$apply();
 			},
 			error: function(user, error) {
@@ -49,6 +50,7 @@ var angularTesting = angular.module('angularTesting', ["ngRoute"]).config(functi
 	$scope.logOut = function(form) {
 		Parse.User.logOut();
 		$scope.currentUser = null;
+		$location.path("/inicio");
 	};
 }]);
 

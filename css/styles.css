@@ -3,11 +3,7 @@ body{
 	background-color: black;
 	color: white;
 }
-input{
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-td>img{
+td img{
 	border: solid;
 	border-width: 1px;
 	border-color: white;
@@ -29,6 +25,35 @@ a:hover {
 }
 a:active {
 	color: white;
+}
+/*Changing navbar colors*/
+.navbar{
+	border: none;
+	color: white;
+}
+.navbar-default .navbar-brand{
+	color: white;
+}
+.container-fluid{
+	background-color: #ED1B24;
+}
+/*Setting logo image inside navbar*/
+@media (max-width: 767px) { 
+	.navbar-brand {
+		padding: 0;
+	}
+
+	.navbar-brand img {
+		margin-top: 5px;
+		margin-left: 5px;
+	}
+}
+.navbar-brand{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	text-align: center;
+	margin: auto;
 }
 /********************************Inicio.html tags***********************/
 .accountRow{
@@ -65,16 +90,26 @@ input{
 }
 input, select, textarea{
 	color: black;
+	font-size: 18px;
 }
 textarea:focus, input:focus {
 	color: black;
 }
-button{
+.blackButton{
 	background-color:black;
 	border-radius: 0px;
 	border: none;
 	width: 150px;
 }
+/*Spacing the submit button*/
 .submitDiv{
 	margin-top: 50px;
 }
+
+.inicioInput{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+/************************listsongs.html Tags*************************/
+
