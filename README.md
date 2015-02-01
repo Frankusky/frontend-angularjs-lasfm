@@ -32,3 +32,6 @@ sudo bower install
 1. What is the general organization of AngularJS projects?
 2. What do you think AngularJS is doing in the background?
 3. What does dependency injection mean?
+
+##See my page:
+http://frankusky.github.io/frontend-angularjs-lasfm
