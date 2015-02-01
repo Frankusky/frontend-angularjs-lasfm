@@ -38,14 +38,13 @@
 						<td>
 							<!--Login form-->
 							<form>
-								<span class="inputText">Correo Electronico</span>
-								<span><input type="email" ng-model="user.email" placeholder="Correo Electronico"/></span><br>
+								<span class="inputText">Nombre</span>
+								<input type="text" ng-model="user.username" placeholder="Nombre" />
 								<span class="inputText">Contraseña</span>
 								<span><input type="password" ng-model="user.password" placeholder="Contraseña"/></span>
 								<p ng-click="forgotPass=true">¿Olvidaste tu contraseña?</p>
 								<p ng-show="forgotPass"><strong>Plop! Pos que mal.</strong></p>
-								<div class="text-center submitDiv"><button ng-click="logIn(user)">Ingresar</button></div>
-								
+								<div class="text-center submitDiv"><button ng-click="logIn(user, '/listsongs')">Ingresar</button></div>
 							</form>
 						</td>
 						<td>
@@ -63,6 +62,7 @@
 					</tr>
 				</tbody>
 			</table>
+			<button ng-click="logOut(user)">Log out</button>
 		</div>
 		<!--div class="col-md-2"><a href="#/listsongs/">go to list songs</a></div-->
 	</div><!--Second row--->
