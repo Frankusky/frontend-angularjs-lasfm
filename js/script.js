@@ -38,8 +38,9 @@ var angularTesting = angular.module('angularTesting', ["ngRoute"]).config(functi
 			success: function(user) {
 				
 				$scope.currentUser = user;
-				$scope.$apply();
 				$location.path(newPath);
+				$scope.$apply();
+				
 			},
 			error: function(user, error) {
 				alert("Unable to log in: " + error.code + " " + error.message);
