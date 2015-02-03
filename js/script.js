@@ -49,7 +49,6 @@ var angularTesting = angular.module('angularTesting', ["ngRoute"]).config(functi
 			});
 		}else{
 			$scope.passStrength = passChecker(form.password);
-			alert();
 		};
 	};
 	
