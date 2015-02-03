@@ -24,7 +24,7 @@
 		<div class ="col-md-2"></div>
 	</div><!--first row-->
 	<div class="row accountRow">
-		<div class="col-md-2"></div>
+		<div class="col-md-2"><img src="sketch/last_fm_logo.png" width="150px;"></div>
 		<div class="col-md-8 text-center">
 			<div ng-show="currentUser">
 				<p>
@@ -40,7 +40,7 @@
 						<td class="text-center accountRowTitle">Crea tu perfil</td>
 					</tr>
 				</thead>
-				<tbody ng-app="authApp">
+				<tbody ng-app>
 					<tr>
 						<td>
 							<!--Login form-->
@@ -62,11 +62,13 @@
 								<span class="inputText">Correo Electronico</span>
 								<span><input type="email" ng-model="user.email" placeholder="Correo Electronico" class="inicioInput"/></span><br>
 								<span class="inputText">Contraseña</span>
-								<span><input type="password" ng-model="user.password" placeholder="Password" class="inicioInput"/></span>
+								<span><input type="password" ng-model="user.password" placeholder="Password" class="inicioInput"></span>
+								<div>Your password status:<br> {{passStrength}}</div>
 								<div class="text-center submitDiv"> <button ng-click="signUp(user, '/listsongs')" class="blackButton">Confirmar</button></div>
 							</form>
 						</td>
 					</tr>
+
 				</tbody>
 			</table>
 			

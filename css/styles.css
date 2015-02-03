@@ -12,19 +12,19 @@ td img{
 }
 /******************Editing some bootstrap CSS styles***************/
 .table-hover > tbody > tr:hover {
-	background-color:#1e1e1e;
+	background-color:#ffe3ae;
 }
 a:link {
-	color: white;
+	color: #ffa051;
 }
 a:visited {
-	color: white;
+	color: #ffa051;
 }
 a:hover {
-	color: white;
+	color: #ffa051;
 }
 a:active {
-	color: white;
+	color: #ffa051;
 }
 /*Changing navbar colors*/
 .navbar{
@@ -113,3 +113,9 @@ textarea:focus, input:focus {
 
 /************************listsongs.html Tags*************************/
 
+.tableBackground{
+	background-color: white;
+}
+.dataColor{
+	color: #ffa051;
+}
